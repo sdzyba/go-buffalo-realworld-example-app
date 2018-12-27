@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"conduit/actions"
+	"github.com/sdzyba/go-buffalo-realworld-example-app/actions"
 )
 
 // main is the starting point for your Buffalo application.

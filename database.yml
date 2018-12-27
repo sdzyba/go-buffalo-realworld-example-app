@@ -1,7 +1,7 @@
 development:
   dialect: postgres
   database: conduit_development
-  user: postgres
+  user: slava
   password: postgres
   host: 127.0.0.1
   pool: 5

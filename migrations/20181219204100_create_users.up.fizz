@@ -1,0 +1,11 @@
+create_table("users") {
+	t.Column("id", "bigint", {primary: true})
+	t.Column("email", "text")
+	t.Column("encrypted_password", "text")
+	t.Column("username", "text")
+	t.Column("image", "text", {"null": true})
+	t.Column("bio", "text", {"null": true})
+}
+
+add_index("users", "email", {"unique": true})
+add_index("users", "username", {"unique": true})
