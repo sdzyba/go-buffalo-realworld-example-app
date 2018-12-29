@@ -2,8 +2,9 @@ module github.com/sdzyba/go-buffalo-realworld-example-app
 
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
-	github.com/go-playground/locales v0.12.1 // indirect
-	github.com/go-playground/universal-translator v0.16.0 // indirect
+	github.com/go-playground/locales v0.12.1
+	github.com/go-playground/universal-translator v0.16.0
+	github.com/go-playground/validator v9.24.0+incompatible
 	github.com/gobuffalo/buffalo v0.13.12
 	github.com/gobuffalo/envy v1.6.11
 	github.com/gobuffalo/fizz v1.5.0 // indirect

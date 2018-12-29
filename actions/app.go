@@ -10,6 +10,11 @@ import (
 	"github.com/rs/cors"
 )
 
+// TODO: buffalo returns stacktrace on http error
+//       check if the same in production environment
+
+// TODO: output error with trace to stdout
+
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
 
@@ -35,14 +40,14 @@ func App() *buffalo.App {
 			AuthScheme: "Token",
 		})
 		app.Use(authMW)
-		app.Middleware.Skip(authMW, uh.Create)
+		app.Middleware.Skip(authMW, uh.Create, uh.Login)
 		// app.Middleware.Skip(authMW, SignUp, Login)
 
 		// app.GET("/", HomeHandler)
 		api := app.Group("/api")
 		guestUsers := api.Group("/users")
 		guestUsers.POST("", uh.Create)
-		// guestUsers.POST("/login", h.Login)
+		guestUsers.POST("/login", uh.Login)
 
 		// user := api.Group("/user")
 		// user.GET("", h.CurrentUser)
